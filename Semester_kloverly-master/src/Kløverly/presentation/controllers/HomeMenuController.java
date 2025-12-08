@@ -1,0 +1,41 @@
+package Kløverly.presentation.controllers;
+
+import Kløverly.domain.BeboerModel;
+import javafx.fxml.FXML;
+
+public class HomeMenuController {
+
+  private BeboerModel model;
+
+  public void setModel(BeboerModel model) {
+    this.model = model;
+  }
+
+  @FXML
+  private void handleOpretBeboer() {
+    NavigationHelper.openWindow("OpretBeboer.fxml", "Opret beboer", this.model);
+  }
+
+  @FXML
+  private void handleBeboerListe() {
+    NavigationHelper.openWindow("BeboerListe.fxml", "Liste over beboere", this.model);
+  }
+
+
+  @FXML
+  private void handleOpretOpgaver() {
+    NavigationHelper.openWindow("OpretOpgaver.fxml", "Opret Ny Opgave", this.model);
+  }
+
+  // De 3 knapper til opgavelister (hvis du har lavet dem)
+  @FXML private void handleGrønneOpgaver() { NavigationHelper.openWindow("grønneopgaver.fxml", "Grønne Opgaver", this.model); }
+  @FXML private void handleBytteOpgaver() { NavigationHelper.openWindow("bytteopgaver.fxml", "Bytte Opgaver", this.model); }
+  @FXML private void handleKlimaOpgaver() { NavigationHelper.openWindow("klimaopgaver.fxml", "Klima Opgaver", this.model); }
+
+  @FXML
+  private void handleLuk() {
+    // Gem data når vi lukker
+    Kløverly.persistense.Datamanager.gemModel(this.model);
+    System.exit(0);
+  }
+}

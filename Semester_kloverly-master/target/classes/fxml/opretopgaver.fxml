@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefWidth="400.0" spacing="15.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kløverly.presentation.controllers.OpretOpgaveController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Opret Ny Opgave">
+        <font><Font size="22.0" /></font>
+    </Label>
+
+    <Label text="Vælg kategori:" />
+    <ComboBox fx:id="kategoriValg" prefWidth="300.0" promptText="Vælg opgavetype..." />
+
+    <TextField fx:id="titelFelt" promptText="Opgavens titel" maxWidth="300.0"/>
+
+    <TextArea fx:id="beskrivelseFelt" promptText="Beskriv opgaven her..." maxWidth="300.0" prefHeight="100.0"/>
+
+    <Button text="Gem Opgave" onAction="#handleGem" style="-fx-background-color: lightgreen;"/>
+    <Button text="Annulle" onAction="#handleTilbage" />
+
+</VBox>
