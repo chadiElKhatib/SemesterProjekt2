@@ -10,10 +10,17 @@ public class bytteopgaver implements Serializable {
 
   private String titel;
   private String beskrivelse;
+  private int point;
 
-  public bytteopgaver(String titel, String beskrivelse) {
+  public bytteopgaver(String titel, String beskrivelse, int point) {
     this.titel = titel;
     this.beskrivelse = beskrivelse;
+    this.point = point; // Gem point
+  }
+
+  // Tilføj getter:
+  public int getPoint() {
+    return point;
   }
 
   // Getters og Setters (hvis du skal bruge dem senere)

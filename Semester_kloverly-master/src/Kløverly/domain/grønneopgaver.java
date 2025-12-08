@@ -6,13 +6,19 @@ public class grønneopgaver implements Serializable {
 
   private String titel;
   private String beskrivelse;
+  private int point;
 
   // Konstruktør
-  public grønneopgaver(String titel, String beskrivelse) {
+  public grønneopgaver(String titel, String beskrivelse, int point) {
     this.titel = titel;
     this.beskrivelse = beskrivelse;
+    this.point = point; // Gem point
   }
 
+  // Tilføj getter:
+  public int getPoint() {
+    return point;
+  }
   // Getters (så vi kan hente info senere)
   public String getTitel() {
     return titel;

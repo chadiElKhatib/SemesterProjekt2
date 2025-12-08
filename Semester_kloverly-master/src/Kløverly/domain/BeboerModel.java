@@ -17,6 +17,11 @@ public class BeboerModel implements Serializable {
   private ArrayList<bytteopgaver> bytteOpgaverList = new ArrayList<>();
   private ArrayList<klimaopgaver> klimaOpgaverList = new ArrayList<>();
 
+  private int fællesPoint = 0;
+  public int getFællesPoint() {
+    return fællesPoint;
+  }
+
 
   // --- METODER TIL BEBOERE ---
 
@@ -32,25 +37,40 @@ public class BeboerModel implements Serializable {
     beboere.add(nyBeboer);
   }
 
+  // BeboerModel.java (Linje 37)
 
-  // --- METODER TIL OPGAVER (DEM DU MANGLER) ---
+  // --- Metoder til opgaver ---
 
-  // Metode til at gemme en grøn opgave
+  // Tildeler PERSONLIGE POINT (forudsætter at du finder den beboer der skal have point)
   public void addGrønOpgave(grønneopgaver opgave) {
     grønneOpgaverList.add(opgave);
-    System.out.println("Grøn opgave gemt i modellen: " + opgave);
+
+    // Bytte og Grønne opgaver tildeles PERSONLIGE POINT.
+    // Denne linje er kommenteret, da den kræver viden om HVEM opgaven udførte:
+    // Beboer beboer = findAktuelBeboer();
+    // beboer.addPoint(opgave.getPoint()); // Bruger Beboer.addPoint
+
+    System.out.println("Grøn opgave gemt i modellen: " + opgave.getPoint() + " point");
   }
 
-  // Metode til at gemme en bytte opgave
+  // Tildeler PERSONLIGE POINT
   public void addBytteOpgave(bytteopgaver opgave) {
     bytteOpgaverList.add(opgave);
-    System.out.println("Bytte opgave gemt i modellen: " + opgave);
+
+    // Beboer beboer = findAktuelBeboer();
+    // beboer.addPoint(opgave.getPoint());
+
+    System.out.println("Bytte opgave gemt i modellen: " + opgave.getPoint() + " point");
   }
 
-  // Metode til at gemme en klima opgave
+  // Tildeler FÆLLES POINT
   public void addKlimaOpgave(klimaopgaver opgave) {
     klimaOpgaverList.add(opgave);
-    System.out.println("Klima opgave gemt i modellen: " + opgave);
+
+    // Klima opgaver tildeles FÆLLES POINT
+    this.fællesPoint += opgave.getPoint(); // <-- NYT: Tildel til fælles saldo
+
+    System.out.println("Klima opgave gemt i modellen. Fælles point nu: " + this.fællesPoint);
   }
 
   // Getters til at hente listerne (hvis du skal vise dem senere)

@@ -9,8 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefWidth="400.0" spacing="15.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kløverly.presentation.controllers.OpretOpgaveController">
-    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+<VBox alignment="TOP_CENTER" prefWidth="400.0" spacing="15.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kløverly.presentation.controllers.OpretOpgaveController">
+    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
 
     <Label text="Opret Ny Opgave">
         <font><Font size="22.0" /></font>
@@ -19,11 +19,11 @@
     <Label text="Vælg kategori:" />
     <ComboBox fx:id="kategoriValg" prefWidth="300.0" promptText="Vælg opgavetype..." />
 
-    <TextField fx:id="titelFelt" promptText="Opgavens titel" maxWidth="300.0"/>
+    <TextField fx:id="titelFelt" maxWidth="300.0" promptText="Opgavens titel" />
 
-    <TextArea fx:id="beskrivelseFelt" promptText="Beskriv opgaven her..." maxWidth="300.0" prefHeight="100.0"/>
+    <TextArea fx:id="beskrivelseFelt" maxWidth="300.0" prefHeight="100.0" promptText="Beskriv opgaven her..." />
 
-    <Button text="Gem Opgave" onAction="#handleGem" style="-fx-background-color: lightgreen;"/>
-    <Button text="Annulle" onAction="#handleTilbage" />
+    <Button fx:id="GemOpgave" onAction="#handleGem" style="-fx-background-color: lightgreen;" text="Gem Opgave" />
+    <Button onAction="#handleTilbage" text="Annulle" />
 
 </VBox>

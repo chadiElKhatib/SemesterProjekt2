@@ -1,6 +1,7 @@
 package Kløverly.presentation.controllers;
 
 import Kløverly.domain.BeboerModel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class HomeMenuController {
@@ -9,6 +10,11 @@ public class HomeMenuController {
 
   public void setModel(BeboerModel model) {
     this.model = model;
+  }
+
+  @FXML
+  public void pointSystem() {
+    NavigationHelper.openWindow( "pointcontroller.fxml", "Pointsystem", this.model);
   }
 
   @FXML
