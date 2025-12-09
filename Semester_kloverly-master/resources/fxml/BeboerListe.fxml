@@ -13,7 +13,6 @@
     <HBox spacing="10">
         <Button text="Slet" onAction="#handleSlet"/>
         <Button text="Rediger" onAction="#handleRediger"/>
-        <Button onAction="#handleSletBeboer" text="Slet" />
     </HBox>
 
 </VBox>
