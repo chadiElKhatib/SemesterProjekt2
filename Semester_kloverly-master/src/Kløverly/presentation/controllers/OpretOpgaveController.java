@@ -12,9 +12,27 @@ import javafx.stage.Stage;
 
 public class OpretOpgaveController {
 
-    public Button GemOpgave;
-    @FXML
-  private TextField pointFelt;
+  @FXML
+  public void initialize() {
+    if (pointSlider != null && sliderVærdiLabel != null) {
+
+      pointSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+        int afrundetPoint = (int) Math.round(newValue.doubleValue());
+
+        sliderVærdiLabel.setText("Point: " + afrundetPoint);
+      });
+
+      int startPoint = (int) Math.round(pointSlider.getValue());
+      sliderVærdiLabel.setText("Point: " + startPoint);
+    }
+  }
+
+  public Button GemOpgave;
+  @FXML
+  private Slider pointSlider;
+
+  @FXML
+  private Label sliderVærdiLabel;
 
   @FXML private ComboBox<String> kategoriValg;
   @FXML private TextField titelFelt;
@@ -32,30 +50,14 @@ public class OpretOpgaveController {
 
   @FXML
   public void handleGem(ActionEvent event) {
-    // 1. Hent værdier
     String kategori = kategoriValg.getValue();
     String titel = titelFelt.getText();
     String beskrivelse = beskrivelseFelt.getText();
-    String pointTekst = pointFelt.getText();
 
+    int point = (int) Math.round(pointSlider.getValue());
 
-
-
-    int point = 0;
-
-    if (kategori == null || titel.isEmpty() || pointTekst.isEmpty()) {
-      System.out.println("Fejl: Du skal vælge kategori, titel og point!");
-      return;
-    }
-
-    try {
-      point = Integer.parseInt(pointTekst);
-      if (point <= 0) {
-        System.out.println("Fejl: Point skal være positivt!");
-        return;
-      }
-    } catch (NumberFormatException e) {
-      System.out.println("Fejl: Point skal være et gyldigt tal!");
+    if (kategori == null || titel.isEmpty()) {
+      System.out.println("Fejl: Du skal vælge kategori og titel!");
       return;
     }
 
@@ -84,7 +86,6 @@ public class OpretOpgaveController {
     lukVindue(event);
   }
 
-  // Hjælpe-metode til at lukke vinduet
   private void lukVindue(ActionEvent event) {
     Node source = (Node) event.getSource();
     Stage stage = (Stage) source.getScene().getWindow();
