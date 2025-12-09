@@ -32,15 +32,13 @@ public class HomeMenuController {
   private void handleOpretOpgaver() {
     NavigationHelper.openWindow("OpretOpgaver.fxml", "Opret Ny Opgave", this.model);
   }
-
-  // De 3 knapper til opgavelister (hvis du har lavet dem)
+  
   @FXML private void handleGrønneOpgaver() { NavigationHelper.openWindow("grønneopgaver.fxml", "Grønne Opgaver", this.model); }
   @FXML private void handleBytteOpgaver() { NavigationHelper.openWindow("bytteopgaver.fxml", "Bytte Opgaver", this.model); }
   @FXML private void handleKlimaOpgaver() { NavigationHelper.openWindow("klimaopgaver.fxml", "Klima Opgaver", this.model); }
 
   @FXML
   private void handleLuk() {
-    // Gem data når vi lukker
     Kløverly.persistense.Datamanager.gemModel(this.model);
     System.exit(0);
   }

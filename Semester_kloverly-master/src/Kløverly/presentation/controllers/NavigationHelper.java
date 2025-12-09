@@ -23,7 +23,6 @@ public class NavigationHelper {
                             .getMethod("setModel", BeboerModel.class)
                             .invoke(controller, model);
                 } catch (NoSuchMethodException ignored) {
-                    // controller har ikke setModel – helt OK
                 }
             }
 

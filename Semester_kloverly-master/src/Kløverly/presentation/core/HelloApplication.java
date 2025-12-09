@@ -19,7 +19,6 @@ public class HelloApplication extends Application {
 
         HomeMenuController controller = loader.getController();
         controller.setModel(new BeboerModel()); // samlet model
-      // Hent gemte data (eller lav ny hvis ingen findes)
       BeboerModel gemtModel = Kløverly.persistense.Datamanager.hentModel();
       controller.setModel(gemtModel);
 

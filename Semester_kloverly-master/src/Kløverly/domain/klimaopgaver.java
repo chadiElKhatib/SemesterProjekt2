@@ -11,10 +11,9 @@ public class klimaopgaver implements Serializable {
   public klimaopgaver(String titel, String beskrivelse, int point) {
     this.titel = titel;
     this.beskrivelse = beskrivelse;
-    this.point = point; // Gem point
+    this.point = point;
   }
 
-  // Tilføj getter:
   public int getPoint() {
     return point;
   }
