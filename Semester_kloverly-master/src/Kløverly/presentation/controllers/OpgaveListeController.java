@@ -26,6 +26,15 @@ public class OpgaveListeController implements Initializable {
 
   @FXML
   public void handleTilbage(ActionEvent event) {
+ lukVindue(event);
+  }
+
+  @FXML
+  public void handleSlet(ActionEvent event) {
+   lukVindue(event);
+  }
+
+  private void lukVindue(ActionEvent event) {
     Node source = (Node) event.getSource();
     Stage stage = (Stage) source.getScene().getWindow();
     stage.close();

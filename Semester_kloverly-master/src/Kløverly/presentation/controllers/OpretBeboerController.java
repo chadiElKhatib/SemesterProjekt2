@@ -10,10 +10,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.time.LocalDate; // VIGTIG IMPORT for at dato virker!
+import java.time.LocalDate;
 
 public class OpretBeboerController {
+
+  private Beboer BeboerTilRedigering;
 
   @FXML public TextField navnField;
   @FXML public TextField telefonField;

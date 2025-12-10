@@ -42,12 +42,15 @@ public class BeboerListeController  {
   private void handleRediger() {
     Beboer valgt = liste.getSelectionModel().getSelectedItem();
     if (valgt != null) {
-      System.out.println("Rediger funktion er ikke lavet endnu for: " + valgt);
+      System.out.println("Fejl: Vælg venligst en beboer, du vil redigere.");
     }
   }
 
   @FXML
   private void handleTilbage(ActionEvent event) {
+    lukVindue(event);}
+
+  private void lukVindue(ActionEvent event) {
     Node source = (Node) event.getSource();
     Stage stage = (Stage) source.getScene().getWindow();
     stage.close();
