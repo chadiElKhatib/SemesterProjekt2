@@ -34,6 +34,7 @@
                   <Button fx:id="OpretBeboer" onAction="#handleOpretBeboer" prefWidth="150.0" text="Opret beboer" />
                   <Button fx:id="SeBeboerListe" onAction="#handleBeboerListe" prefWidth="150.0" text="Se beboer liste" />
                   <Button fx:id="opretOpgave" onAction="#handleOpretOpgaver" prefWidth="150.0" text="Opret opgaver" />
+                   <Button fx:id="SeOpgaveListe" onAction="#handleVisOpgaveListe" prefWidth="150.0" text="Se opgave liste" />
                   <Button fx:id="pointsystem" mnemonicParsing="false" onAction="#pointSystem" prefWidth="150.0" text="Pointsystem" />
                </children>
             </VBox>

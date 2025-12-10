@@ -82,6 +82,11 @@ public class OpretOpgaveController {
   }
 
   @FXML
+  public void handleAnnuller(ActionEvent event) {
+    lukVindue(event);
+  }
+
+  @FXML
   public void handleTilbage(ActionEvent event) {
     lukVindue(event);
   }

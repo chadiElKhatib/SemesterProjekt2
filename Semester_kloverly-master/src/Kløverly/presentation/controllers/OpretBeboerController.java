@@ -1,5 +1,6 @@
 package Kløverly.presentation.controllers;
 
+import Kløverly.persistense.Datamanager;
 import Kløverly.domain.Beboer;
 import Kløverly.domain.BeboerModel;
 import javafx.event.ActionEvent;
@@ -42,6 +43,7 @@ public class OpretBeboerController {
 
     if (model != null) {
       model.opretBeboer(nyBeboer);
+      Datamanager.gemModel(model);
       status.setText("Succes: " + navn + " er gemt!");
 
       navnField.clear();
@@ -54,6 +56,11 @@ public class OpretBeboerController {
 
   @FXML
   public void handleAnnuller(ActionEvent event) {
+    lukVindue(event);
+  }
+
+  @FXML
+  public void handleTilbage(ActionEvent event) {
     lukVindue(event);
   }
 

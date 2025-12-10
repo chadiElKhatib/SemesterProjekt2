@@ -3,6 +3,8 @@ package Kløverly.presentation.controllers;
 import Kløverly.domain.BeboerModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import Kløverly.presentation.controllers.NavigationHelper;
+import Kløverly.persistense.Datamanager;
 
 public class HomeMenuController {
 
@@ -42,4 +44,9 @@ public class HomeMenuController {
     Kløverly.persistense.Datamanager.gemModel(this.model);
     System.exit(0);
   }
-}
+  @FXML
+  public void handleVisOpgaveListe(ActionEvent event) {
+    BeboerModel model = Datamanager.hentModel();
+    NavigationHelper.openWindow("OpgaveListe.fxml", "Liste over Opgaver", model);
+  }
+  }

@@ -29,6 +29,7 @@
     <Slider fx:id="pointSlider" majorTickUnit="10" max="100" maxWidth="300.0" min="0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="false" value="10" />
 
     <Button fx:id="GemOpgave" onAction="#handleGem" style="-fx-background-color: lightgreen;" text="Gem Opgave" />
-    <Button onAction="#handleTilbage" text="Annuller" />
+    <Button onAction="#handleAnnuller" text="Annuller" />
+   <Button mnemonicParsing="false" onAction="#handleTilbage" text="Tilbage" />
 
 </VBox>

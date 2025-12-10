@@ -14,7 +14,7 @@ public class NavigationHelper {
                     NavigationHelper.class.getResource("/fxml/" + fxmlName)
             );
 
-            Parent root = loader.load();
+            Parent root = loader. load();
 
             Object controller = loader.getController();
             if (controller != null && model != null) {
@@ -25,6 +25,8 @@ public class NavigationHelper {
                 } catch (NoSuchMethodException ignored) {
                 }
             }
+
+
 
             Stage stage = new Stage();
             stage.setTitle(title);

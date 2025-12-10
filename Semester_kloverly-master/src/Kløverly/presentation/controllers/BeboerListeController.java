@@ -8,7 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
-public class BeboerListeController {
+public class BeboerListeController  {
 
   @FXML
   private ListView<Beboer> liste;
