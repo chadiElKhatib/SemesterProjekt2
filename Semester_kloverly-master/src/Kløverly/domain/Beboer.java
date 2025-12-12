@@ -20,9 +20,22 @@ public class Beboer implements Serializable {
   public String getTelefon() { return telefon; }
   public String getDato() { return dato; }
 
+
   public int getPoint() { return point; }
   public void addPoint(int p) { this.point += p; }
   public void fjernPoint(int p) { this.point -= p; }
+
+    public void setNavn(String navn) {
+        this.navn = navn;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
+    }
+
+    public void setDato(String dato) {
+        this.dato = dato;
+    }
 
   @Override
   public String toString() {
