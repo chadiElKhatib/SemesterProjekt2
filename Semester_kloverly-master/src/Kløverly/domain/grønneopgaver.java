@@ -28,6 +28,6 @@ public class grønneopgaver implements Serializable {
 
   @Override
   public String toString() {
-    return titel;
+      return titel + " — " + beskrivelse;
   }
 }

@@ -4,6 +4,7 @@ import Kløverly.domain.BeboerModel;
 import Kløverly.domain.grønneopgaver;
 import Kløverly.domain.bytteopgaver;
 import Kløverly.domain.klimaopgaver;
+import Kløverly.persistense.Datamanager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -63,16 +64,19 @@ public class OpretOpgaveController {
 
     if (model != null) {
       switch (kategori) {
-        case "Grøn Opgave":
-          model.addGrønOpgave(new grønneopgaver(titel, beskrivelse, point));
-          break;
-        case "Bytte Opgave":
-          model.addBytteOpgave(new bytteopgaver(titel, beskrivelse, point));
-          break;
-        case "Klima Opgave":
-          model.addKlimaOpgave(new klimaopgaver(titel, beskrivelse, point));
-          break;
+          case "Grøn Opgave":
+              model.addGrønOpgave(new grønneopgaver(titel, beskrivelse, point));
+              break;
+
+          case "Bytte Opgave":
+              model.addBytteOpgave(new bytteopgaver(titel, beskrivelse, point));
+              break;
+          case "Klima Opgave":
+              model.addKlimaOpgave(new klimaopgaver(titel, beskrivelse, point));
+              break;
       }
+          Datamanager.gemModel(model);
+
       System.out.println("Gemte: " + titel + " (" + point + " point) i kategorien " + kategori);
 
       lukVindue(event);

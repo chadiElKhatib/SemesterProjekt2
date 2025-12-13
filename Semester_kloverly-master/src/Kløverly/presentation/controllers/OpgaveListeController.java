@@ -17,45 +17,83 @@ import javafx.stage.Stage;
 
 public class OpgaveListeController implements Initializable {
 
-  @FXML
-  private ListView<grønneopgaver> grønneOpgaverListe;
-  @FXML
-  private ListView<bytteopgaver> bytteOpgaverListe;
-  @FXML
-  private ListView<klimaopgaver> klimaOpgaverListe;
+    private BeboerModel model;
 
-  @FXML
-  public void handleTilbage(ActionEvent event) {
- lukVindue(event);
-  }
 
-  @FXML
-  public void handleSlet(ActionEvent event) {
-   lukVindue(event);
-  }
+    public void setModel(BeboerModel model) {
+        this.model = model;
 
-  private void lukVindue(ActionEvent event) {
-    Node source = (Node) event.getSource();
-    Stage stage = (Stage) source.getScene().getWindow();
-    stage.close();
-  }
 
-  @Override
-  public void initialize(URL url, ResourceBundle resourceBundle) {
-    BeboerModel model = Datamanager.hentModel();
-
-    if (model != null) {
-      grønneOpgaverListe.setItems(
-          FXCollections.observableArrayList(model.getGrønneOpgaverList())
-      );
-
-      bytteOpgaverListe.setItems(
-          FXCollections.observableArrayList(model.getBytteOpgaverList())
-      );
-
-      klimaOpgaverListe.setItems(
-          FXCollections.observableArrayList(model.getKlimaOpgaverList())
-      );
+        grønneOpgaverListe.setItems(
+                FXCollections.observableArrayList(model.getGrønneOpgaverList())
+        );
+        bytteOpgaverListe.setItems(
+                FXCollections.observableArrayList(model.getBytteOpgaverList())
+        );
+        klimaOpgaverListe.setItems(
+                FXCollections.observableArrayList(model.getKlimaOpgaverList())
+        );
     }
-  }
+
+    @FXML
+    private ListView<grønneopgaver> grønneOpgaverListe;
+    @FXML
+    private ListView<bytteopgaver> bytteOpgaverListe;
+    @FXML
+    private ListView<klimaopgaver> klimaOpgaverListe;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
+    @FXML
+    public void handleTilbage(ActionEvent event) {
+        lukVindue(event);
+    }
+
+    @FXML
+    public void handleSlet(ActionEvent event) {
+        if (model == null) {
+            System.out.println("FEJL: Model ikke sat!");
+            return;
+        }
+
+
+
+        grønneopgaver valgtGrøn = grønneOpgaverListe.getSelectionModel().getSelectedItem();
+        if (valgtGrøn != null) {
+            model.getGrønneOpgaverList().remove(valgtGrøn);
+            Datamanager.gemModel(model);
+            grønneOpgaverListe.setItems(FXCollections.observableArrayList(model.getGrønneOpgaverList()));
+            return;
+        }
+
+
+        bytteopgaver valgtBytte = bytteOpgaverListe.getSelectionModel().getSelectedItem();
+        if (valgtBytte != null) {
+            model.getBytteOpgaverList().remove(valgtBytte);
+            Datamanager.gemModel(model);
+            bytteOpgaverListe.setItems(FXCollections.observableArrayList(model.getBytteOpgaverList()));
+            return;
+        }
+
+
+        klimaopgaver valgtKlima = klimaOpgaverListe.getSelectionModel().getSelectedItem();
+        if (valgtKlima != null) {
+            model.getKlimaOpgaverList().remove(valgtKlima);
+            Datamanager.gemModel(model);
+            klimaOpgaverListe.setItems(FXCollections.observableArrayList(model.getKlimaOpgaverList()));
+            return;
+        }
+
+        System.out.println("Ingen opgave valgt til sletning!");
+    }
+
+    private void lukVindue(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
 }
