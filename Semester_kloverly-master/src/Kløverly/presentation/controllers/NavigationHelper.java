@@ -26,8 +26,6 @@ public class NavigationHelper {
                 }
             }
 
-
-
             Stage stage = new Stage();
             stage.setTitle(title);
             stage.setScene(new Scene(root));

@@ -5,6 +5,7 @@ import Kløverly.domain.grønneopgaver;
 import Kløverly.domain.bytteopgaver;
 import Kløverly.domain.klimaopgaver;
 import Kløverly.persistense.Datamanager;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -12,6 +13,8 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class OpretOpgaveController {
+
+
 
   @FXML
   public void initialize() {
@@ -34,7 +37,6 @@ public class OpretOpgaveController {
 
   @FXML
   private Label sliderVærdiLabel;
-
   @FXML private ComboBox<String> kategoriValg;
   @FXML private TextField titelFelt;
   @FXML private TextArea beskrivelseFelt;
@@ -49,7 +51,7 @@ public class OpretOpgaveController {
     kategoriValg.getItems().addAll("Grøn Opgave", "Bytte Opgave", "Klima Opgave");
   }
 
-  @FXML
+
   public void handleGem(ActionEvent event) {
     String kategori = kategoriValg.getValue();
     String titel = titelFelt.getText();
@@ -63,20 +65,25 @@ public class OpretOpgaveController {
     }
 
     if (model != null) {
-      switch (kategori) {
-          case "Grøn Opgave":
-              model.addGrønOpgave(new grønneopgaver(titel, beskrivelse, point));
-              break;
+      switch (kategori)
+      {
+        case "Grøn Opgave":
+          model.addGrønOpgave(new grønneopgaver(titel, beskrivelse, point));
+          for (grønneopgaver grønneopgaver : FXCollections.observableArrayList(
+              this.model.getGrønneOpgaverList()))
+          {
+            if (grønneopgaver == null);
+          }
 
-          case "Bytte Opgave":
-              model.addBytteOpgave(new bytteopgaver(titel, beskrivelse, point));
-              break;
-          case "Klima Opgave":
-              model.addKlimaOpgave(new klimaopgaver(titel, beskrivelse, point));
-              break;
+          break;
+        case "Bytte Opgave":
+          model.addBytteOpgave(new bytteopgaver(titel, beskrivelse, point));
+          break;
+        case "Klima Opgave":
+          model.addKlimaOpgave(new klimaopgaver(titel, beskrivelse, point));
+          break;
       }
-          Datamanager.gemModel(model);
-
+      Datamanager.gemModel(model);
       System.out.println("Gemte: " + titel + " (" + point + " point) i kategorien " + kategori);
 
       lukVindue(event);

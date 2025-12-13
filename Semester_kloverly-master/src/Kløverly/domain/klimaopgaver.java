@@ -22,6 +22,6 @@ public class klimaopgaver implements Serializable {
 
   @Override
   public String toString() {
-      return titel + " — " + beskrivelse;
+    return this.titel + " (" + this.point + " point)";
   }
 }

@@ -2,6 +2,8 @@ package Kløverly.presentation.controllers;
 
 import Kløverly.domain.Beboer;
 import Kløverly.domain.BeboerModel;
+import Kløverly.persistense.Datamanager;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,7 +37,20 @@ public class pointcontroller implements Initializable {
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-    setupTableViewColumns();
+
+    this.model = Datamanager.hentModel();
+
+    if (this.model != null) {
+
+      navnKolonne.setCellValueFactory(new PropertyValueFactory<>("navn"));
+      pointKolonne.setCellValueFactory(new PropertyValueFactory<>("point"));
+
+      fællespointLabel.setText(this.model.getFællesPoint() + " Point");
+
+      beboerPointTabel.setItems(
+          FXCollections.observableArrayList(this.model.getBeboer())
+      );
+    }
   }
 
   private void setupTableViewColumns() {

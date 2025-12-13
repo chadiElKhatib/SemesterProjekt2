@@ -46,6 +46,21 @@ public class BeboerModel implements Serializable {
     System.out.println("Klima opgave gemt i modellen. Fælles point nu: " + this.fællesPoint);
   }
 
+  public void addFællesPoint(int point) {
+    this.fællesPoint += point;
+    System.out.println("Fælles point opdateret. Nyt total: " + this.fællesPoint);
+  }
+
+  public void addPersonligePoint(String beboerNavn, int point) {
+    for (Beboer b : beboere) {
+      if (b.getNavn().equalsIgnoreCase(beboerNavn)) {
+        b.addPoint(point);
+        System.out.println(beboerNavn + " fik tildelt " + point + " personlige point.");
+        return;
+      }
+    }
+    System.out.println("ADVARSEL: Beboer med navnet " + beboerNavn + " blev ikke fundet.");
+  }
 
   public ArrayList<grønneopgaver> getGrønneOpgaverList() { return grønneOpgaverList; }
   public ArrayList<bytteopgaver> getBytteOpgaverList() { return bytteOpgaverList; }
