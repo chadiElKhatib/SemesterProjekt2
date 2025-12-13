@@ -23,6 +23,6 @@ public class bytteopgaver implements Serializable {
 
   @Override
   public String toString() {
-    return titel + ": " + beskrivelse;
+    return this.titel + " (" + this.point + " point)";
   }
 }

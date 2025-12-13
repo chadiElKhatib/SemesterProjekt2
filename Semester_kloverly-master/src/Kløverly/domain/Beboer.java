@@ -7,13 +7,13 @@ public class Beboer implements Serializable {
   private String navn;
   private String telefon;
   private String dato;
-  private int point;
+  private int personligePoint = 0;
 
   public Beboer(String navn, String telefon, String dato) {
     this.navn = navn;
     this.telefon = telefon;
     this.dato = dato;
-    this.point = 0;
+    this.personligePoint = 0;
   }
 
   public String getNavn() { return navn; }
@@ -21,9 +21,9 @@ public class Beboer implements Serializable {
   public String getDato() { return dato; }
 
 
-  public int getPoint() { return point; }
-  public void addPoint(int p) { this.point += p; }
-  public void fjernPoint(int p) { this.point -= p; }
+  public int getPoint() { return personligePoint; }
+  public void addPoint(int p) { this.personligePoint += p; }
+  public void fjernPoint(int p) { this.personligePoint -= p; }
 
     public void setNavn(String navn) {
         this.navn = navn;
@@ -39,6 +39,6 @@ public class Beboer implements Serializable {
 
   @Override
   public String toString() {
-    return navn + " - " + dato + " (" + point + " point)";
+    return navn + " - " + dato + " (" + personligePoint + " point)";
   }
 }

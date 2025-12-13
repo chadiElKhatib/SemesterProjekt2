@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefWidth="400.0" spacing="15.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kløverly.presentation.controllers.OpretOpgaveController">
+<VBox alignment="TOP_CENTER" prefWidth="400.0" spacing="15.0" xmlns="http://javafx.com/javafx/24.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kløverly.presentation.controllers.OpretOpgaveController">
     <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
 
     <Label text="Opret Ny Opgave">
@@ -26,7 +27,8 @@
 
     <Label fx:id="sliderVærdiLabel" text="Point: 10" />
 
-    <Slider fx:id="pointSlider" majorTickUnit="10" max="100" maxWidth="300.0" min="0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="false" value="10" />
+    <Slider fx:id="pointSlider" majorTickUnit="10" max="100" maxWidth="300.0" min="0" minorTickCount="0" showTickLabels="true"
+            showTickMarks="true" snapToTicks="false" value="10" />
 
     <Button fx:id="GemOpgave" onAction="#handleGem" style="-fx-background-color: lightgreen;" text="Gem Opgave" />
     <Button onAction="#handleAnnuller" text="Annuller" />
