@@ -10,23 +10,18 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.time.LocalDate;
 
 public class RedigerBeboerController {
 
     @FXML
     private TextField navnField;
-
     @FXML
     private TextField telefonField;
-
     @FXML
     private DatePicker fødselsdato;
-
     @FXML
     private Label statusLabel;
-
     private Beboer beboer;
     private BeboerModel model;
 

@@ -7,25 +7,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class HelloApplication extends Application
-{
+public class HelloApplication extends Application {
 
-    @Override
-    public void start(Stage stage) throws Exception {
+  @Override
+  public void start(Stage stage) throws Exception {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomeMenu.fxml"));
+    Scene scene = new Scene(loader.load());
 
-        FXMLLoader loader =
-                new FXMLLoader(getClass().getResource("/fxml/HomeMenu.fxml"));
+    HomeMenuController controller = loader.getController();
 
-        Scene scene = new Scene(loader.load());
-      //scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+    BeboerModel gemtModel = Kløverly.persistense.Datamanager.hentModel();
 
-        HomeMenuController controller = loader.getController();
-        controller.setModel(new BeboerModel()); // samlet model
-      BeboerModel gemtModel = Kløverly.persistense.Datamanager.hentModel();
-      controller.setModel(gemtModel);
+    controller.setModel(gemtModel);
 
-        stage.setTitle("Kløverly systemet!");
-        stage.setScene(scene);
-        stage.show();
-    }
+    stage.setTitle("Kløverly systemet!");
+    stage.setScene(scene);
+    stage.show();
+  }
 }

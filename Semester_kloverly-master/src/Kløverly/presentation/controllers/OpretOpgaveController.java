@@ -14,8 +14,6 @@ import javafx.stage.Stage;
 
 public class OpretOpgaveController {
 
-
-
   @FXML
   public void initialize() {
     if (pointSlider != null && sliderVærdiLabel != null) {
