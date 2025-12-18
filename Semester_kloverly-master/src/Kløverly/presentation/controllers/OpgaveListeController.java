@@ -43,11 +43,23 @@ public class OpgaveListeController implements Initializable {
     Beboer valgtBeboer = beboerValgCombo.getSelectionModel().getSelectedItem();
 
     boolean ændring = false;
+
     if (valgtGrøn != null) {
       model.addFællesPoint(valgtGrøn.getPoint());
       model.getGrønneOpgaverList().remove(valgtGrøn);
+
+      if (model.getFællesPoint() >= 500) {
+        java.time.LocalDateTime nu = java.time.LocalDateTime.now();
+        java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        String tidspunkt = nu.format(formatter);
+
+        model.setMilepælBesked("Sidst ramt 500 point: " + tidspunkt);
+        model.setFællesPoint(0); // Nulstiller puljen
+        System.out.println("Mål nået! Point nulstillet.");
+      }
       ændring = true;
-    } else if (valgtBeboer != null) {
+    }
+    else if (valgtBeboer != null) {
       if (valgtBytte != null) {
         model.addPersonligePoint(valgtBeboer.getNavn(), valgtBytte.getPoint());
         model.getBytteOpgaverList().remove(valgtBytte);

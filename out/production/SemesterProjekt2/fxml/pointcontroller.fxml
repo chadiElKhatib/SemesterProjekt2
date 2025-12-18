@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="500.0" maxWidth="834.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0"
-          prefWidth="811.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kløverly.presentation.controllers.pointcontroller">
+<GridPane maxHeight="500.0" maxWidth="834.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kløverly.presentation.controllers.pointcontroller">
 
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="350.0" prefWidth="350.0" />
@@ -45,8 +44,14 @@
                             <Font name="System Bold" size="48.0" />
                         </font>
                     </Label>
-                    <ProgressBar fx:id="fællesProgressBar" prefWidth="300.0" progress="0.0" />
+                    <ProgressBar fx:id="fællesProgressBar" minHeight="20.0" prefWidth="300.0" progress="0.0" />
                     <Label text="Fælles mål: 500 point" />
+
+                    <Label fx:id="milepælLabel" text="Ingen mål nået endnu" textFill="#5b5b5b">
+                        <font>
+                            <Font name="System Italic" size="13.0" />
+                        </font>
+                    </Label>
                 </children>
             </VBox>
          <Button mnemonicParsing="false" onAction="#handleTilbage" text="Tilbage">

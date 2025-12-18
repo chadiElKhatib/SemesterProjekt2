@@ -7,9 +7,8 @@ import java.util.ArrayList;
 
 public class BeboerModel implements Serializable
 {
-
+  private String milepælBesked = "Ingen mål nået endnu.";
   private ArrayList<Beboer> beboere = new ArrayList<>();
-
   private ArrayList<grønneopgaver> grønneOpgaverList = new ArrayList<>();
   private ArrayList<bytteopgaver> bytteOpgaverList = new ArrayList<>();
   private ArrayList<klimaopgaver> klimaOpgaverList = new ArrayList<>();
@@ -18,6 +17,11 @@ public class BeboerModel implements Serializable
   public int getFællesPoint() {
     return fællesPoint;
   }
+
+  public String getMilepælBesked() { return milepælBesked; }
+  public void setMilepælBesked(String besked) { this.milepælBesked = besked; }
+
+  public void setFællesPoint(int point) { this.fællesPoint = point; }
 
   public ObservableList<Beboer> getBeboer() {
     return FXCollections.observableArrayList(beboere);
@@ -43,7 +47,6 @@ public class BeboerModel implements Serializable
 
   public void addKlimaOpgave(klimaopgaver opgave) {
     klimaOpgaverList.add(opgave);
-    //this.fællesPoint += opgave.getPoint();
     System.out.println("Klima opgave gemt i modellen. Fælles point nu: " + this.fællesPoint);
   }
 
