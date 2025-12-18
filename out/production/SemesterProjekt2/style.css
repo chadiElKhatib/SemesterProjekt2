@@ -1,0 +1,97 @@
+.root {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 120%, #1e3a34 0%, #070e0c 100%);
+    -fx-font-family: "Inter", "Segoe UI", sans-serif;
+    -fx-text-fill: #e0e0e0;
+}
+
+.text-field, .text-area, .combo-box, .date-picker > .text-field {
+    -fx-background-color: rgba(255, 255, 255, 0.03);
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.4);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-radius: 12;
+    -fx-padding: 14;
+    -fx-font-size: 14px;
+    -fx-transition: 0.2s all ease-in-out;
+}
+
+.text-field:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-border-color: #00ffaa;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 170, 0.2), 15, 0, 0, 0);
+}
+
+.button {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-radius: 12;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 12 28;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-translate-y: -2;
+}
+
+#gemKnap, #GemOpgave, #pointsystem {
+    -fx-background-color: linear-gradient(to bottom right, #00ffaa, #00cc88);
+    -fx-text-fill: #05100d;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 170, 0.3), 15, 0, 0, 0);
+}
+
+#gemKnap:hover, #GemOpgave:hover, #pointsystem:hover {
+    -fx-background-color: linear-gradient(to bottom right, #33ffbb, #00ffaa);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 170, 0.5), 20, 0, 0, 0);
+}
+
+#lukKnap {
+    -fx-background-color: #ff3b30;
+    -fx-text-fill: white;
+    -fx-border-width: 0;
+}
+
+#lukKnap:hover {
+    -fx-background-color: #ff605c;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 59, 48, 0.4), 15, 0, 0, 0);
+}
+
+
+.slider .axis {
+    -fx-tick-label-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.slider .thumb {
+    -fx-background-color: #00ffaa;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 170, 0.6), 10, 0, 0, 0);
+}
+
+.list-view, .table-view {
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.05);
+    -fx-border-radius: 16;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cccccc;
+    -fx-padding: 15;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: rgba(0, 255, 170, 0.1);
+    -fx-text-fill: #00ffaa;
+}

@@ -1,7 +1,6 @@
 package Kløverly.presentation.controllers;
 
 import Kløverly.domain.BeboerModel;
-import Kløverly.persistense.Datamanager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 

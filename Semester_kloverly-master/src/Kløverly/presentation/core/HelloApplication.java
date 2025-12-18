@@ -14,6 +14,8 @@ public class HelloApplication extends Application {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomeMenu.fxml"));
     Scene scene = new Scene(loader.load());
 
+    scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+
     HomeMenuController controller = loader.getController();
 
     BeboerModel gemtModel = Kløverly.persistense.Datamanager.hentModel();
@@ -22,7 +24,6 @@ public class HelloApplication extends Application {
 
     stage.setTitle("Kløverly systemet!");
     stage.setScene(scene);
-    scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
     stage.show();
   }
 }
