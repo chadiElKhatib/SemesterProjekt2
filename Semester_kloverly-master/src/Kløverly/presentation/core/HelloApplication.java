@@ -22,6 +22,7 @@ public class HelloApplication extends Application {
 
     stage.setTitle("Kløverly systemet!");
     stage.setScene(scene);
+    scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
     stage.show();
   }
 }
