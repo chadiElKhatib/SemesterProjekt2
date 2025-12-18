@@ -8,23 +8,24 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.Node;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class pointcontroller implements Initializable {
-
+public class pointcontroller implements Initializable
+{
   @FXML private Label fællespointLabel;
   @FXML private ProgressBar fællesProgressBar;
   @FXML private TableView<Beboer> beboerPointTabel;
   @FXML private TableColumn<Beboer, String> navnKolonne;
   @FXML private TableColumn<Beboer, Integer> pointKolonne;
+
 
   private BeboerModel model;
 
@@ -39,7 +40,6 @@ public class pointcontroller implements Initializable {
   public void initialize(URL url, ResourceBundle resourceBundle) {
 
     this.model = Datamanager.hentModel();
-
     if (this.model != null) {
 
       navnKolonne.setCellValueFactory(new PropertyValueFactory<>("navn"));

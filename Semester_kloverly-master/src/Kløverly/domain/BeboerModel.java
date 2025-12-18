@@ -5,7 +5,8 @@ import javafx.collections.ObservableList;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class BeboerModel implements Serializable {
+public class BeboerModel implements Serializable
+{
 
   private ArrayList<Beboer> beboere = new ArrayList<>();
 
@@ -42,7 +43,7 @@ public class BeboerModel implements Serializable {
 
   public void addKlimaOpgave(klimaopgaver opgave) {
     klimaOpgaverList.add(opgave);
-    this.fællesPoint += opgave.getPoint();
+    //this.fællesPoint += opgave.getPoint();
     System.out.println("Klima opgave gemt i modellen. Fælles point nu: " + this.fællesPoint);
   }
 

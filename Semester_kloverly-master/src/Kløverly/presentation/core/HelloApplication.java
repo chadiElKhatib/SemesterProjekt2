@@ -7,7 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class HelloApplication extends Application {
+public class HelloApplication extends Application
+{
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -16,6 +17,7 @@ public class HelloApplication extends Application {
                 new FXMLLoader(getClass().getResource("/fxml/HomeMenu.fxml"));
 
         Scene scene = new Scene(loader.load());
+      //scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
 
         HomeMenuController controller = loader.getController();
         controller.setModel(new BeboerModel()); // samlet model

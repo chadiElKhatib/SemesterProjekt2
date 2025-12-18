@@ -2,6 +2,7 @@ package Kløverly.presentation.controllers;
 
 import Kløverly.domain.*;
 import Kløverly.persistense.Datamanager;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,11 +10,9 @@ import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-
+import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.stage.Stage;
 
 public class OpgaveListeController implements Initializable
 {

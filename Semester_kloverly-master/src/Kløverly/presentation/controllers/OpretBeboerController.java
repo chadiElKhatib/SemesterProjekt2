@@ -1,8 +1,8 @@
 package Kløverly.presentation.controllers;
 
-import Kløverly.persistense.Datamanager;
 import Kløverly.domain.Beboer;
 import Kløverly.domain.BeboerModel;
+import Kløverly.persistense.Datamanager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -10,6 +10,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 import java.time.LocalDate;
 
 public class OpretBeboerController {

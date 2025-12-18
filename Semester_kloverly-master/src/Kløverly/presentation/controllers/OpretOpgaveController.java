@@ -1,8 +1,8 @@
 package Kløverly.presentation.controllers;
 
 import Kløverly.domain.BeboerModel;
-import Kløverly.domain.grønneopgaver;
 import Kløverly.domain.bytteopgaver;
+import Kløverly.domain.grønneopgaver;
 import Kløverly.domain.klimaopgaver;
 import Kløverly.persistense.Datamanager;
 import javafx.collections.FXCollections;

@@ -2,7 +2,8 @@ package Kløverly.domain;
 
 import java.io.Serializable;
 
-public class grønneopgaver implements Serializable {
+public class grønneopgaver implements Serializable
+{
 
   private String titel;
   private String beskrivelse;

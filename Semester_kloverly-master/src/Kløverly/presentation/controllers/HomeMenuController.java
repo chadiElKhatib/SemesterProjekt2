@@ -1,10 +1,9 @@
 package Kløverly.presentation.controllers;
 
 import Kløverly.domain.BeboerModel;
+import Kløverly.persistense.Datamanager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import Kløverly.presentation.controllers.NavigationHelper;
-import Kløverly.persistense.Datamanager;
 
 public class HomeMenuController {
 

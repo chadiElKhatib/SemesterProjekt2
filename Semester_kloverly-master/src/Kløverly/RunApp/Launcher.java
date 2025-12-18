@@ -1,7 +1,7 @@
 package Kløverly.RunApp;
 
-import javafx.application.Application;
 import Kløverly.presentation.core.HelloApplication;
+import javafx.application.Application;
 
 public class Launcher {
     public static void main(String[] args) {

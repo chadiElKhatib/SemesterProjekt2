@@ -2,7 +2,8 @@ package Kløverly.domain;
 
 import java.io.Serializable;
 
-public class Beboer implements Serializable {
+public class Beboer implements Serializable
+{
 
   private String navn;
   private String telefon;
@@ -19,6 +20,7 @@ public class Beboer implements Serializable {
   public String getNavn() { return navn; }
   public String getTelefon() { return telefon; }
   public String getDato() { return dato; }
+  public int getPersonligePoint() { return personligePoint; }
 
 
   public int getPoint() { return personligePoint; }
