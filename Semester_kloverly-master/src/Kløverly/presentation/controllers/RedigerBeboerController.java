@@ -47,17 +47,18 @@ public class RedigerBeboerController {
 
     @FXML
     private void handleGem(ActionEvent event) {
+
         String nytNavn = navnField.getText();
-        String nyTlf = telefonField.getText();
+        String nyTelefon = telefonField.getText();
         LocalDate nyDato = fødselsdato.getValue();
 
-        if (nytNavn.isEmpty() || nyTlf.isEmpty() || nyDato == null) {
+        if (nytNavn.isEmpty() || nyTelefon.isEmpty() || nyDato == null) {
             statusLabel.setText("Udfyld alle felter.");
             return;
         }
 
         beboer.setNavn(nytNavn);
-        beboer.setTelefon(nyTlf);
+        beboer.setTelefon(nyTelefon);
         beboer.setDato(nyDato.toString());
 
         if (model != null) {
